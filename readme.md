@@ -10,10 +10,10 @@ All of the scripts can run from anywhere. The script has logic built-in to deter
 1. Extract the zip file into a folder
 
 	  > I tend to use the following structure for my Definitive Media Library (DML):  
-	  > `\\<server>\<share>\<vendor>\<application-name>\<application-version>\<application-architecture>` 
+	  > `\\<server>\<share>\<vendor>\<application-name>\<application-version> <application-architecture>` 
 	  >  
 	  > So, for Microsoft Visio Pro 2010 x86, I would extract the zip file to a folder named:  
-	  > `\\server01\share01\Microsoft\Visio Pro\2010\x86`  
+	  > `\\server01\share01\Microsoft\Visio Pro\2010 x86`  
   
 1. Copy the installation files into the same folder as the Install-ApplicationShortName.vbs file
 1. Edit the vbs file name to represent the application you are installing:  
