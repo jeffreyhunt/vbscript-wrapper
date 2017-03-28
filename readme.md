@@ -5,8 +5,10 @@ This ones for the System Center Configuration Manager people out there. A number
 All of the scripts can run from anywhere. The script has logic built-in to determine its location, allowing the folder to be moved around without the need to re-code to have the installations still work. It is designed to look in the script folder for  the relevant MSI or EXE to install.
 
 # Basic Setup
+## Obtain the files
+Click ***[Download Zip](https://github.com/jeffreyhunt/vbscript-wrapper/archive/master.zip)*** or on the right sidebar of this Github page.
 
-1. Click ***[Download Zip](https://github.com/jeffreyhunt/vbscript-wrapper/archive/master.zip)*** on the right sidebar of this Github page.
+## Preparing the environment
 1. Extract the zip file into a folder
 
 	  > I tend to use the following structure for my Definitive Media Library (DML):  
@@ -15,17 +17,36 @@ All of the scripts can run from anywhere. The script has logic built-in to deter
 	  > So, for Microsoft Visio Pro 2010 x86, I would extract the zip file to a folder named:  
 	  > `\\server01\share01\Microsoft\Visio Pro\2010 x86`  
   
+1. Delete the script files not required:  
+	* If you are installing an `MSI`, delete Install-ApllicationShortName(EXE).vbs and Uninstall-ApplicationName(EXE).vbs  
+	* If you are installing an `EXE`, delete Install-ApllicationShortName(MSI).vbs and Uninstall-ApplicationName(MSI).vbs
+	
 1. Copy the installation files into the same folder as the Install-ApplicationShortName.vbs file
-1. Edit the vbs file name to represent the application you are installing:  
 
-	> i.e. Rename _Install-**ApplicationName**.vbs_ to _Install-**MicrosoftVisioPro**.vbs_ if you are installing Microsoft Visio Pro  
+1. Rename the vbs files to represent the application you are installing:  
+
+	> i.e. Rename _Install-**ApplicationName(MSI)**.vbs_ to _Install-**MicrosoftVisioPro**.vbs_ if you are installing Microsoft Visio Pro  
+	> i.e. Rename _Uninstall-**ApplicationName(MSI)**.vbs_ to _Uninstall-**MicrosoftVisioPro**.vbs_ if you are uninstalling Microsoft Visio Pro  
 	>
 	> **note:** the version is omitted to reduce the amount of editing required when copying the directory and application/package inside SCCM for a new version
-  
-1. Edit the vbs file, changing the following to match up with the new application:
-	* "ApplicationShortName"
-	* "MSIVersion"
-	* "MSIName"
+	
+## Configuring the Install script
+1. Open the installation vbs, e.g. `Install-MicrosoftVisioPro.vbs`
+
+1. change the following variables at the top of the file to match up with the new application:
+	* "ApplicationShortName", e.g. `MicrosoftVisioPro`
+	* "MSIVersion", e.g. `2010_x86`
+	* "MSIName", e.g. `MicrosoftVisioPro`
+	
+## Configuring the Uninstall script
+1. Open the uninstall vbs, e.g. `Uninstall-MicrosoftVisioPro.vbs`
+
+1. change the following variables at the top of the file to match up with the new application:
+	```vbs
+	strApplicationShortName = "ApplicationShortName" 'application name without spaces, e.g. MicrosoftVisioPro
+	strCurrentVersion = "MSIVersion" 'application version, e.g. 2010_x86
+	strUninstallGUID = "GUID" 'insert application GUID, WITHOUT the curly brackets, e.g. 90150000-003B-0000-0000-0000000FF1CE
+	```
 
 ## Important notes
 
