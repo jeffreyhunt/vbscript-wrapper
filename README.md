@@ -12,12 +12,13 @@ All of the scripts can run from anywhere. The script has logic built-in to deter
 	  > `\\<server>\<share>\<vendor>\<application-name>\<application-version>\<application-architecture>` 
 	  >  
 	  > So, for Microsoft Visio Pro 2010 x86, I would extract the zip file to a folder named:  
-		> `\\server01\share01\Microsoft\Visio Pro\2010\x86`  
+	  > `\\server01\share01\Microsoft\Visio Pro\2010\x86`  
   
 1. Copy the installation files into the same folder as the Install-ApplicationShortName.vbs file
 1. Edit the vbs file name to represent the application you are installing:  
 
 	> i.e. Rename _Install-**ApplicationName**.vbs_ to _Install-**MicrosoftVisioPro**.vbs_ if you are installing Microsoft Visio Pro  
+	>
 	> **note:** the version is omitted to reduce the amount of editing required when copying the directory and application/package inside SCCM for a new version
   
 1. Edit the vbs file, changing the following to match up with the new application:
@@ -30,7 +31,7 @@ All of the scripts can run from anywhere. The script has logic built-in to deter
 	> e.g. if you have an MSI named MicrosoftVisioPro.msi, name your MST MicrosoftVisioPro.mst
 
 * In order to install with MST and apply MSPs, you need to comment out line 32, and uncomment line 36.  
-	* This requires a little more editing to have the MSP filenames (future edits???)
+	> This requires a little more editing to have the MSP filenames (future edits???)
 
 * We have commented in the scripts enough that it should be explanatory.
 
