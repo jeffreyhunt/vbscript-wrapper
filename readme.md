@@ -39,7 +39,9 @@ All of the scripts can run from anywhere. The script has logic built-in to deter
 If you need any extra help, let me know. There could be some fine-tuning needed on some of the scripts (hey, we all make mistakes), but they should work out-of-the-box.
 
 # Issue Reporting
-Please raise any issues in [the github issues page](https://github.com/jeffreyhunt/vbscript-wrappers/issues?state=open).
+Please raise any issues in [the vbscript-wrapper issues page](https://github.com/jeffreyhunt/vbscript-wrapper/issues).
+To raise a new issue, click here: <https://github.com/jeffreyhunt/vbscript-wrapper/issues/new>
+To see open issues, click here: <https://github.com/jeffreyhunt/vbscript-wrapper/issues?q=is:open>
 
 # Contributing
 
